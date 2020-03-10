@@ -1,0 +1,176 @@
+@import 'src/styles/styles.scss';
+
+.login-wrap {
+
+    background: url('/assets/images/login-bg.png') rgba($color: $light-grey, $alpha: 1) no-repeat center;
+    background-size: cover;
+    background-blend-mode: multiply;
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+
+    // LOGIN-INNER TO HOUSE FORMS
+    .login__inner {
+
+        width: 620px;
+        height: 600px;
+        box-shadow: 5px 10px rgba(244, 244, 244, 0.12);
+        background: $light-grey;
+        padding: 68px 84px 123px 85px;
+
+        .login__header {
+
+            font-style: normal;
+            font-weight: bold;
+            font-size: 1.75rem;
+            color: $font-color;
+            margin-bottom: 3.625rem;
+        }
+
+        .login__input-wrap {
+
+            @include column;
+
+            &:not(:last-child) {
+
+                margin-bottom: 1.9375rem;
+            }
+
+            &:last-child {
+
+                margin-bottom: 1.75rem;
+            }
+
+            // INPUT ICON
+            .input-icon {
+
+                margin-left: 28px;
+                margin-right: 21.61px;
+                position: absolute;
+            }
+
+            .login__label {
+
+                font-style: normal;
+                font-weight: normal;
+                font-size: 1.25rem;
+                margin-bottom: 1.4375rem;
+                margin-left: 0.8125rem;
+            }
+
+            .select-style {
+
+                border: none;
+                @include radius-6px;
+                width: 100%;
+                height: 58px;
+                overflow: hidden;
+                display: flex;
+                align-items: center;
+                background: $white url("/assets/icons/Vector.svg") no-repeat 97% 50%;
+                position: relative;
+
+                select {
+                    padding: 10px 68px;
+                    width: 130%;
+                    height: 100%;
+                    border: none;
+                    box-shadow: none;
+                    background: transparent;
+                    background-image: none;
+                    -webkit-appearance: none;
+                    cursor: pointer;
+                    color: $placeholder-color;
+
+                    &:focus {
+
+                        outline: none;
+                        box-shadow: inset 0 1.5px 3px rgba($color: $font-color, $alpha: .2);
+                        background: darken($color: $light-grey, $amount: .5);
+                    }
+                }
+            }
+
+
+
+            // PASSWORD
+            .password-wrap {
+
+                position: relative;
+
+                .password-icon {
+
+                    position: absolute;
+                    top: 15px;
+                    left: 28px;
+                    z-index: 10;
+
+                }
+            }
+
+            .login__password {
+
+                position: relative;
+                height: 58px;
+                width: 100%;
+                background: $white;
+                @include radius-2px;
+                @include transition;
+                border: none;
+                outline: none;
+                padding: 10px 68px;
+                caret-color: $placeholder-color;
+                color: $placeholder-color;
+                font-size: 1rem;
+
+                &:focus {
+
+                    box-shadow: inset 0 1.5px 3px rgba($color: $font-color, $alpha: .2);
+                    background: darken($color: $light-grey, $amount: .5);
+                }
+
+            }
+
+        }
+
+        // LOGIN BUTTON
+        .login__button-wrap {
+
+            @include flex-row;
+            margin-top: 5rem;
+
+            .login--btn {
+
+                width: 160px;
+                height: 48px;
+                background: $btn-primary;
+                @include radius-2px;
+                @include transition;
+                text-transform: uppercase;
+                font-style: normal;
+                font-weight: 500;
+                font-size: .9rem;
+                color: $white;
+                outline: none;
+                border: none;
+                cursor: pointer;
+
+                &:hover {
+
+                    box-shadow: .2px 10px 10px 0 rgba($color: $font-color, $alpha: .3);
+                }
+
+                &:focus {
+
+                    box-shadow: 0 0 0 5px rgba($color: $font-color, $alpha: .5);
+                    background: darken($color: $font-color, $amount: 6%);
+
+                }
+            }
+        }
+    }
+}
