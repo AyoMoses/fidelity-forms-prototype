@@ -397,6 +397,13 @@
             border: none;
             cursor: pointer;
 
+            @include deskTopFirst(720) {
+
+                width: 30%;
+                height: 40px;
+                font-size: .75rem;
+            }
+
 
             &:hover {
 
