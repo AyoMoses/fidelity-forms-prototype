@@ -104,15 +104,15 @@ h6 {
     src: local("Poppins"), local("Poppins"),
         url(https://fonts.gstatic.com/poppins.woff2) format('woff2'),
         url(https://fonts.gstatic.com/poppins.woff) format('woff');
-    font-display: optional;
+    font-display: swap;
 }
 
 @font-face {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-style: normal;
     font-weight: bold;
-    src: local("Roboto"), local("Roboto"),
+    src: local("Poppins"), local("Poppins"),
         url(https://fonts.gstatic.com/poppins.woff2) format('woff2'),
         url(https://fonts.gstatic.com/poppins.woff) format('woff');
-    font-display: optional;
+    font-display: swap;
 }

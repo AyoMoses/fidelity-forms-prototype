@@ -2,12 +2,18 @@
 
 .user-details-wrap {
 
-    background: url('/assets/images/submit-bg.png') rgba($color: $light-grey, $alpha: 1) no-repeat center;
+    background: url('/assets/images/submit-bg.png') rgba($color: $light-grey, $alpha: 1) no-repeat center center;
     background-blend-mode: multiply;
     background-size: cover;
     height: 100%;
     width: 100%;
-    max-width: 100%;
+    overflow-x: hidden;
+
+    // REMOVE PADDING FROM INNER WRAP TO MAIN WRAP ON MOBILE VIEW
+    @include deskTopFirst(768) {
+
+        padding: 24px 0 20px 0;
+    }
 
     .user-details__inner {
 
@@ -16,6 +22,28 @@
         align-items: flex-start;
         padding: 64px 191px 61px 42px;
 
+        // REVERSE LAYOUT DISPLAY ON MOBILE FOR BETTER UI/UX
+        @include deskTopFirst(768) {
+
+            display: flex;
+            flex-flow: column-reverse nowrap;
+        }
+
+        @include deskTopFirst(1440) {
+
+            width: 100%;
+            max-width: calc(100% - 70px);
+            margin: 0 auto 0 20px;
+            padding: 64px 0 61px 0;
+        }
+
+        @include deskTopFirst(768) {
+
+            max-width: calc(100% - 20px);
+            margin: 0 auto;
+            padding: 0;
+        }
+
         .forms-wrap {
 
             flex: 1;
@@ -23,6 +51,13 @@
             width: 100%;
             height: auto;
             margin-right: 30px;
+
+            // WHEN DISPLAY IS SET TO FULL COLUMN ON MOBILE TO REMOVE MARGIN RIGHT
+
+            @include deskTopFirst(768) {
+
+                margin-right: none;
+            }
 
             // FORM SECTION HEADER
             .forms--header {
@@ -33,13 +68,29 @@
                 color: $font-color;
                 margin-bottom: 1.5625rem;
 
+                @include deskTopFirst(768) {
+
+                    font-size: 1.15rem;
+
+                    // BASED ON MARKUP, THE REVERSE ONLY CHANGES LAYOUT NOT MARKUP WHICH CSS TARGETS
+                    &:nth-child(1) {
+
+                        margin-top: 1.5625rem;
+                    }
+                }
+
             }
 
             .user-details__form-wrap {
 
                 @include column;
-                margin-bottom: 18px;
+                margin-bottom: 1.125rem;
                 position: relative;
+
+                @include deskTopFirst(768) {
+
+                    margin-bottom: 1rem;
+                }
 
                 .user-details-form__label {
 
@@ -48,12 +99,23 @@
                     font-weight: normal;
                     font-size: 0.875rem;
                     color: $font-color;
+
+                    @include deskTopFirst(768) {
+
+                        font-size: 0.675rem;
+                    }
                 }
 
                 .big-label {
 
                     font-size: 1.125rem;
                     font-weight: bold;
+
+                    @include deskTopFirst(768) {
+
+                        font-size: .87rem;
+                        margin-top: 1rem;
+                    }
                 }
 
                 // INPUT FORM STYLE
@@ -67,8 +129,10 @@
                     padding-left: 20px;
                     caret-color: $placeholder-color;
 
-                    &::placeholder {
-                        color: $placeholder-color !important;
+                    @include deskTopFirst(768) {
+
+                        height: 36px;
+                        font-size: .65rem;
                     }
 
                     /* WebKit, Edge */
@@ -122,6 +186,14 @@
                     align-items: center;
                     background: $white url("/assets/icons/Vector.svg") no-repeat 97% 50%;
 
+
+                    @include deskTopFirst(768) {
+
+                        height: 36px;
+                        font-size: .65rem;
+                        background-size: 11px;
+                    }
+
                     select {
                         padding: 10px 20px;
                         width: 130%;
@@ -139,6 +211,12 @@
                             outline: none;
                             box-shadow: inset 0 1.5px 3px rgba($color: $font-color, $alpha: .2);
                             background: darken($color: $light-grey, $amount: .5);
+                        }
+
+                        @include deskTopFirst(768) {
+
+
+                            font-size: .65rem;
                         }
                     }
                 }
@@ -175,8 +253,15 @@
                     border: none;
                     @include radius-2px;
 
+                    @include deskTopFirst(768) {
+
+                        height: 36px;
+                        font-size: .65rem;
+                    }
+
                 }
 
+                // REMOVE DEFAULT HTML5 ARROW ICONS
                 .date-input::-webkit-outer-spin-button,
                 .date-input::-webkit-inner-spin-button {
                     -webkit-appearance: none;
@@ -193,15 +278,34 @@
                     position: absolute;
                     right: 20px;
                     top: 41px;
+
+                    @include deskTopFirst(768) {
+
+                        top: 36px;
+                        width: 11px;
+                        height: 11px;
+                    }
                 }
             }
 
+            // LEFT ROLE FORMS FOR LAYOUT STYLE
             .forms-left {
 
                 flex: 1;
                 height: auto;
-                margin-right: 60px;
-                margin-left: 189px;
+                margin-right: 35px;
+                margin-left: 30px;
+
+                @include deskTopFirst(1440) {
+
+                    margin-left: 20px;
+                    margin-right: 35px;
+                }
+
+                @include deskTopFirst(768) {
+
+                    margin: 0;
+                }
 
             }
 
@@ -218,6 +322,11 @@
                 justify-content: space-between;
                 padding: 30px 20px 19px 17px;
 
+                @include deskTopFirst(768) {
+
+                    margin-top: 1.3rem;
+                }
+
                 ul li:nth-child(2) {
 
                     text-align: center;
@@ -230,6 +339,21 @@
                     font-weight: normal;
                     font-size: 1.1rem;
                     color: #555555;
+
+                    @include deskTopFirst(768) {
+
+                        font-size: .9rem;
+                    }
+                    @include deskTopFirst(600) {
+
+                        font-size: .6rem;
+                        font-weight: bold;
+                    }
+                    @include deskTopFirst(375) {
+
+                        font-size: .52rem;
+                        
+                    }
                 }
 
                 .horizontal-line {
@@ -251,6 +375,11 @@
     .submit__button-wrap {
 
         @include flex-row;
+        
+        @include deskTopFirst(768) {
+
+            margin-top: 4.5rem;
+        }
 
         .submit--btn {
 

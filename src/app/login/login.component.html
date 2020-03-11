@@ -9,7 +9,7 @@
             <label for="name" class="login__label">Name</label>
             <div class="select-style">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="#343434" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="input-icon">
+                    stroke="#343434" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="input-icon mobile-icon-resize">
                     <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                     <circle cx="12" cy="7" r="4"></circle>
                 </svg>
@@ -29,7 +29,7 @@
             <form action="" class="password-wrap">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    class="password-icon">
+                    class="password-icon mobile-icon-resize">
                     <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
                     <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
                 </svg>
@@ -41,7 +41,7 @@
 
         <!-- LOGIN BUTTON -->
         <div role="button" class="login__button-wrap">
-            <button class="login--btn" type="button">Login</button>
+            <button [routerLink]="['/user-details']" class="login--btn" type="button">Login</button>
         </div>
 
 

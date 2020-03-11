@@ -7,6 +7,13 @@
     -o-transition: all .3s linear;
 }
 
+// MEDIA QUERY
+@mixin deskTopFirst($media) {
+    @media screen and (max-width: $media/16+em) {
+        @content;
+    }
+}
+
 @mixin transition-color {
     
     transition: color .3s linear;

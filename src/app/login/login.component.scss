@@ -8,10 +8,8 @@
     height: 100%;
     width: 100%;
     max-width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
+    @include flex-row;
+
 
     // LOGIN-INNER TO HOUSE FORMS
     .login__inner {
@@ -22,6 +20,14 @@
         background: $light-grey;
         padding: 68px 84px 123px 85px;
 
+        @include deskTopFirst(720) {
+
+            height: auto;
+            padding: 25px 22px 30px 21px;
+            max-width: calc(100% - 50px);
+            margin: 0 auto;
+        }
+
         .login__header {
 
             font-style: normal;
@@ -29,6 +35,12 @@
             font-size: 1.75rem;
             color: $font-color;
             margin-bottom: 3.625rem;
+
+            @include deskTopFirst(720) {
+
+                font-size: 1.5rem;
+                margin-bottom: 2rem;
+            }
         }
 
         .login__input-wrap {
@@ -43,6 +55,16 @@
             &:last-child {
 
                 margin-bottom: 1.75rem;
+            }
+
+            // RESIZE ON MOBILE
+            .mobile-icon-resize {
+                
+                @include deskTopFirst(720) {
+
+                    width: 15px;
+                    height: 15px;
+                }
             }
 
             // INPUT ICON
@@ -60,6 +82,12 @@
                 font-size: 1.25rem;
                 margin-bottom: 1.4375rem;
                 margin-left: 0.8125rem;
+
+                @include deskTopFirst(720) {
+
+                    font-size: 1rem;
+                    margin-bottom: .85rem;
+                }
             }
 
             .select-style {
@@ -73,6 +101,11 @@
                 align-items: center;
                 background: $white url("/assets/icons/Vector.svg") no-repeat 97% 50%;
                 position: relative;
+
+                @include deskTopFirst(720) {
+
+                    height: 48px;
+                }
 
                 select {
                     padding: 10px 68px;
@@ -127,6 +160,11 @@
                 color: $placeholder-color;
                 font-size: 1rem;
 
+                @include deskTopFirst(720) {
+
+                    height: 48px;
+                }
+
                 &:focus {
 
                     box-shadow: inset 0 1.5px 3px rgba($color: $font-color, $alpha: .2);
@@ -158,6 +196,13 @@
                 outline: none;
                 border: none;
                 cursor: pointer;
+
+                @include deskTopFirst(720) {
+
+                    width: 35%;
+                    height: 38px;
+                    font-size: .75rem;
+                }
 
                 &:hover {
 
