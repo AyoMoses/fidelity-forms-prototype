@@ -79,6 +79,11 @@
                     }
                 }
 
+                @include deskTopFirst(425) {
+
+                    font-size: .9rem;
+                }
+
             }
 
             .user-details__form-wrap {
@@ -115,6 +120,11 @@
 
                         font-size: .87rem;
                         margin-top: 1rem;
+                    }
+
+                    @include deskTopFirst(425) {
+
+                        font-size: .6rem;
                     }
                 }
 
